@@ -192,7 +192,7 @@ const ServicePage = () => (
           name: "DEXTEROUS, BEARD TRIM", 
           price: "$35 | 30min", 
           desc: "Experience the art of precision trimming with our Dexterous Beard Trim service. Our skilled professionals ensure easy handling and deliver impeccable results, leaving you looking sharp and well-groomed.", 
-          img: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200"
+          img: "/images/service-beardtrim.avif"
         }
       ].map((s, i) => (
         <motion.div 
