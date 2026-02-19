@@ -168,7 +168,7 @@ const ServicePage = () => (
           name: "THE PERFORMANCE, DEXTEROUS CUT", 
           price: "$70 | 45min", 
           desc: "Experience the ultimate precision with 'The Performance, Dexterous Cut' service. Benefit from a meticulously designed cut tailored to your needs, ensuring a comfortable fit and an enhanced grip. Haircut, Beard Trim and Razor.", 
-          img: "https://images.unsplash.com/photo-1599351431202-1e0aa3e51d20?q=80&w=1200"
+          img: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS CUT, RAZOR FINISH", 
@@ -186,7 +186,7 @@ const ServicePage = () => (
           name: "DEXTEROUS, LINE UP", 
           price: "$25 | 15min", 
           desc: "Experience the ultimate in personalized service with Line Up - a premium appointment booking that caters exclusively to your needs. Our expert team ensures a seamless experience, combining versatile designs, high-quality materials, and functional features.", 
-          img: "https://images.unsplash.com/photo-1593702295094-ada225545f43?q=80&w=1200"
+          img: "https://images.unsplash.com/photo-1512690118275-1aa3c2417b16?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS, BEARD TRIM", 
