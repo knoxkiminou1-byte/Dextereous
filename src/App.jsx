@@ -246,6 +246,7 @@ const PortfolioPage = () => (
         "/images/portfolio6.webp",
         "/images/portfolio7.png",
         "/images/portfolio8.png",
+        "/images/portfolio9.png",
       ].map((url, i) => (
         <motion.div 
           key={i} 
@@ -256,7 +257,7 @@ const PortfolioPage = () => (
           <img 
             src={url} 
             alt={`Portfolio ${i + 1}`} 
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+            className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
           />
         </motion.div>
       ))}
