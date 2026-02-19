@@ -359,7 +359,7 @@ const AboutPage = () => (
       className="grid md:grid-cols-2 gap-24 items-center"
     >
       <motion.div variants={slideInLeft} className="aspect-[4/5] overflow-hidden border border-white/10">
-        <SafeImage src="/images/shop.webp" className="w-full h-full" alt="Dexterous Barber Lounge" grayscale={true} />
+        <SafeImage src="/images/shop.webp" className="w-full h-full" alt="Dexterous Barber Lounge" grayscale={false} />
       </motion.div>
       <motion.div variants={slideInRight} className="space-y-12">
         <h2 className="text-5xl md:text-7xl font-bold text-white tracking-[0.05em] uppercase leading-none">Our Craft</h2>
