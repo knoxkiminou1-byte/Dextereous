@@ -186,13 +186,13 @@ const ServicePage = () => (
           name: "DEXTEROUS, LINE UP", 
           price: "$25 | 15min", 
           desc: "Experience the ultimate in personalized service with Line Up - a premium appointment booking that caters exclusively to your needs. Our expert team ensures a seamless experience, combining versatile designs, high-quality materials, and functional features.", 
-          img: "/images/service-lineup.avif"
+          img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS, BEARD TRIM", 
           price: "$35 | 30min", 
           desc: "Experience the art of precision trimming with our Dexterous Beard Trim service. Our skilled professionals ensure easy handling and deliver impeccable results, leaving you looking sharp and well-groomed.", 
-          img: "/images/service-beard.avif"
+          img: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200"
         }
       ].map((s, i) => (
         <motion.div 
