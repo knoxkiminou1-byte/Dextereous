@@ -168,31 +168,31 @@ const ServicePage = () => (
           name: "THE PERFORMANCE, DEXTEROUS CUT", 
           price: "$70 | 45min", 
           desc: "Experience the ultimate precision with 'The Performance, Dexterous Cut' service. Benefit from a meticulously designed cut tailored to your needs, ensuring a comfortable fit and an enhanced grip. Haircut, Beard Trim and Razor.", 
-          img: "/images/portfolio2.webp"
+          img: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS CUT, RAZOR FINISH", 
           price: "$55 | 30min", 
           desc: "Experience the art of precise cutting and a smooth finish with our razor haircut service. Our skilled stylists will create versatile styles that suit your unique look. Book your appointment now for a truly exceptional grooming experience!", 
-          img: "/images/portfolio4.webp"
+          img: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS CUT", 
           price: "$50 | 30min", 
           desc: "Experience the expertise of our professional stylists who offer a wide variety of styles to suit your preferences. Enjoy top-notch service and book your appointment now for a quality haircut experience like no other!", 
-          img: "/images/portfolio1.webp"
+          img: "https://images.unsplash.com/photo-1605497746481-9885868ef2b4?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS, LINE UP", 
           price: "$25 | 15min", 
           desc: "Experience the ultimate in personalized service with Line Up - a premium appointment booking that caters exclusively to your needs. Our expert team ensures a seamless experience, combining versatile designs, high-quality materials, and functional features.", 
-          img: "/images/portfolio3.webp"
+          img: "https://images.unsplash.com/photo-1512690118275-1aa3c2417b16?q=80&w=1200"
         },
         { 
           name: "DEXTEROUS, BEARD TRIM", 
           price: "$35 | 30min", 
           desc: "Experience the art of precision trimming with our Dexterous Beard Trim service. Our skilled professionals ensure easy handling and deliver impeccable results, leaving you looking sharp and well-groomed.", 
-          img: "/images/portfolio5.webp"
+          img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200"
         }
       ].map((s, i) => (
         <motion.div 
