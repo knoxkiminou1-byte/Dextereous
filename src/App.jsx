@@ -504,7 +504,7 @@ export default function App() {
               <div onClick={() => navigate('home')} className="cursor-pointer group">
                 <BrandLogo size="sm" className="items-start" />
               </div>
-              <div className="hidden lg:flex gap-10 items-center text-[10px] font-black uppercase tracking-[0.3em]">
+              <div className="hidden lg:flex gap-12 items-center text-lg xl:text-xl font-black uppercase">
                 {[
                   { label: 'Home', id: 'home' },
                   { label: 'Service', id: 'service' },
@@ -512,9 +512,9 @@ export default function App() {
                   { label: 'Contact', id: 'contact' },
                   { label: 'About', id: 'about' }
                 ].map(item => (
-                  <button key={item.id} onClick={() => navigate(item.id)} className={`transition-colors duration-300 relative ${page === item.id ? 'text-white' : 'text-white/40 hover:text-white'}`}>
+                  <button key={item.id} onClick={() => navigate(item.id)} className={`menu-link glossy-silver relative ${page === item.id ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}>
                     {item.label}
-                    {page === item.id && <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 right-0 h-[1px] bg-white" />}
+                    {page === item.id && <motion.div layoutId="nav-underline" className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-white/0 via-white to-white/0" />}
                   </button>
                 ))}
                 <div className="h-10 w-px bg-white/10" />
@@ -528,25 +528,26 @@ export default function App() {
             <AnimatePresence>
               {menuOpen && (
                 <motion.div 
-                  initial={{ opacity: 0 }} 
-                  animate={{ opacity: 1 }} 
-                  exit={{ opacity: 0 }} 
-                  className="fixed inset-0 z-[60] bg-black p-12 flex flex-col items-center justify-center space-y-6"
+                  initial={{ opacity: 0, backdropFilter: 'blur(0px)' }} 
+                  animate={{ opacity: 1, backdropFilter: 'blur(5px)' }} 
+                  exit={{ opacity: 0, backdropFilter: 'blur(0px)' }} 
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-[60] bg-black/95 p-12 flex flex-col items-center justify-center space-y-8"
                 >
-                  <button onClick={() => setMenuOpen(false)} className="absolute top-10 right-10 text-white"><X className="w-10 h-10" /></button>
+                  <button onClick={() => setMenuOpen(false)} className="absolute top-10 right-10 text-white/90 hover:text-white transition-colors"><X className="w-10 h-10" /></button>
                   {['Home', 'Service', 'Portfolio', 'Contact', 'About'].map((item, i) => (
                     <motion.button 
                       key={item} 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
+                      initial={{ opacity: 0, y: 44, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ delay: i * 0.08, duration: 0.45, type: 'spring', stiffness: 180, damping: 16 }}
                       onClick={() => navigate(item.toLowerCase())} 
-                      className="text-4xl md:text-5xl font-bold uppercase tracking-[0.1em] hover:text-white/50 transition-colors"
+                      className="menu-link glossy-silver text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-[0.14em]"
                     >
                       {item}
                     </motion.button>
                   ))}
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.45 }}>
                     <MagneticButton href={BOOKING_URL} className="mt-8">Book Online</MagneticButton>
                   </motion.div>
                 </motion.div>

@@ -29,3 +29,44 @@ h6 {
 .brand-subtitle {
   font-family: var(--font-display);
 }
+
+
+@keyframes silverSheen {
+  0% {
+    background-position: -220% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+.glossy-silver {
+  color: transparent;
+  background-image: linear-gradient(
+    105deg,
+    #7f7f7f 0%,
+    #bcbcbc 18%,
+    #f6f6f6 34%,
+    #a0a0a0 52%,
+    #ffffff 66%,
+    #969696 82%,
+    #d4d4d4 100%
+  );
+  background-size: 260% 260%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
+  animation: silverSheen 6s linear infinite;
+}
+
+.menu-link {
+  letter-spacing: 0.22em;
+  transform-origin: center;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.menu-link:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.16);
+}
