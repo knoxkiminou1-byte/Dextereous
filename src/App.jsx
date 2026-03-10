@@ -10,21 +10,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const BOOKING_URL = "https://book.squareup.com/appointments/qcqwb3bnqni8yy/location/LP3M72E5EMT6N/services?buttonTextColor=ffffff&color=212121&locale=en&referrer=so";
 
-const BrandLogo = ({ size = 'md', className = '' }) => {
+const BrandLogo = ({ size = 'md', className = '', glossyTitle = false }) => {
   const sizes = {
-    sm: { title: 'text-xl', sub: 'text-[7px] tracking-[0.3em]', dash: 'w-4' },
-    md: { title: 'text-2xl', sub: 'text-[8px] tracking-[0.4em]', dash: 'w-6' },
-    lg: { title: 'text-4xl md:text-5xl', sub: 'text-[10px] tracking-[0.5em]', dash: 'w-8' },
-    xl: { title: 'text-5xl md:text-[5rem]', sub: 'text-[12px] md:text-[14px] tracking-[0.5em]', dash: 'w-10' },
-    hero: { title: 'text-5xl md:text-[7rem]', sub: 'text-[12px] md:text-[16px] tracking-[0.5em]', dash: 'w-12' },
+    sm: { title: 'text-2xl', sub: 'text-[9px] tracking-[0.3em]', dash: 'w-4' },
+    md: { title: 'text-3xl', sub: 'text-[10px] tracking-[0.4em]', dash: 'w-6' },
+    lg: { title: 'text-5xl md:text-6xl', sub: 'text-[12px] tracking-[0.5em]', dash: 'w-8' },
+    xl: { title: 'text-6xl md:text-[5.5rem]', sub: 'text-[13px] md:text-[15px] tracking-[0.5em]', dash: 'w-10' },
+    hero: { title: 'text-6xl md:text-[7.5rem]', sub: 'text-[13px] md:text-[17px] tracking-[0.5em]', dash: 'w-12' },
   };
   const s = sizes[size];
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <span className={`${s.title} font-bold text-white tracking-[0.15em] uppercase leading-none`} style={{ fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif" }}>DEXTEROUS</span>
+      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
       <div className="flex items-center gap-3 mt-2">
         <div className={`h-[1px] ${s.dash} bg-white`} />
-        <span className={`${s.sub} font-bold text-white uppercase leading-none`} style={{ fontFamily: "'Arial', 'Helvetica Neue', sans-serif" }}>BARBER LOUNGE</span>
+        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none`}>BARBER LOUNGE</span>
         <div className={`h-[1px] ${s.dash} bg-white`} />
       </div>
     </div>
@@ -156,9 +156,9 @@ const ServicePage = () => (
       <motion.div variants={fadeUp}>
         <BrandLogo size="lg" />
       </motion.div>
-      <motion.p variants={fadeUp} className="text-[10px] tracking-[0.4em] uppercase font-black text-white/50 border-t border-white/10 pt-4 inline-block mt-8">Choose one of my specialties</motion.p>
+      <motion.p variants={fadeUp} className="text-sm md:text-base tracking-[0.35em] uppercase font-black text-white/60 border-t border-white/10 pt-4 inline-block mt-8">Choose one of my specialties</motion.p>
       <motion.div variants={fadeUp} className="mt-8">
-        <MagneticButton href={BOOKING_URL} variant="primary">Book Now</MagneticButton>
+        <MagneticButton href={BOOKING_URL} variant="primary" className="text-sm md:text-base px-10 py-4">Book Now</MagneticButton>
       </motion.div>
     </motion.div>
     
@@ -206,14 +206,14 @@ const ServicePage = () => (
           <motion.div variants={i % 2 === 0 ? slideInLeft : slideInRight} className="flex-1 w-full aspect-[4/3] overflow-hidden">
             <SafeImage src={s.img} className="w-full h-full" alt={s.name} grayscale={true} />
           </motion.div>
-          <motion.div variants={i % 2 === 0 ? slideInRight : slideInLeft} className="flex-1 space-y-6 pt-4">
+          <motion.div variants={i % 2 === 0 ? slideInRight : slideInLeft} className="flex-1 space-y-8 pt-4">
             <div className="flex items-center gap-4">
               <div className="h-[1px] w-8 bg-white/30" />
-              <h3 className="text-white/40 uppercase tracking-[0.2em] text-[10px] font-black">{s.name}</h3>
+              <h3 className="text-white/70 uppercase tracking-[0.14em] text-2xl md:text-3xl font-black leading-tight">{s.name}</h3>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-lg">{s.desc}</p>
-            <p className="text-white text-lg font-bold tracking-wide">{s.price}</p>
-            <MagneticButton variant="dark" href={BOOKING_URL}>Book Now</MagneticButton>
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-xl">{s.desc}</p>
+            <p className="text-white text-2xl md:text-3xl font-bold tracking-wide">{s.price}</p>
+            <MagneticButton variant="dark" href={BOOKING_URL} className="text-sm md:text-base px-10 py-4">Book Now</MagneticButton>
           </motion.div>
         </motion.div>
       ))}
@@ -502,9 +502,9 @@ export default function App() {
             
             <nav className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference">
               <div onClick={() => navigate('home')} className="cursor-pointer group">
-                <BrandLogo size="sm" className="items-start" />
+                <BrandLogo size="sm" className="items-start" glossyTitle={true} />
               </div>
-              <div className="hidden lg:flex gap-10 items-center text-[10px] font-black uppercase tracking-[0.3em]">
+              <div className="hidden lg:flex gap-12 items-center text-lg xl:text-xl font-black uppercase">
                 {[
                   { label: 'Home', id: 'home' },
                   { label: 'Service', id: 'service' },
@@ -512,9 +512,9 @@ export default function App() {
                   { label: 'Contact', id: 'contact' },
                   { label: 'About', id: 'about' }
                 ].map(item => (
-                  <button key={item.id} onClick={() => navigate(item.id)} className={`transition-colors duration-300 relative ${page === item.id ? 'text-white' : 'text-white/40 hover:text-white'}`}>
+                  <button key={item.id} onClick={() => navigate(item.id)} className={`menu-link glossy-silver relative ${page === item.id ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}>
                     {item.label}
-                    {page === item.id && <motion.div layoutId="nav-underline" className="absolute -bottom-1 left-0 right-0 h-[1px] bg-white" />}
+                    {page === item.id && <motion.div layoutId="nav-underline" className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-white/0 via-white to-white/0" />}
                   </button>
                 ))}
                 <div className="h-10 w-px bg-white/10" />
@@ -528,25 +528,26 @@ export default function App() {
             <AnimatePresence>
               {menuOpen && (
                 <motion.div 
-                  initial={{ opacity: 0 }} 
-                  animate={{ opacity: 1 }} 
-                  exit={{ opacity: 0 }} 
-                  className="fixed inset-0 z-[60] bg-black p-12 flex flex-col items-center justify-center space-y-6"
+                  initial={{ opacity: 0, backdropFilter: 'blur(0px)' }} 
+                  animate={{ opacity: 1, backdropFilter: 'blur(5px)' }} 
+                  exit={{ opacity: 0, backdropFilter: 'blur(0px)' }} 
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-[60] bg-black/95 p-12 flex flex-col items-center justify-center space-y-8"
                 >
-                  <button onClick={() => setMenuOpen(false)} className="absolute top-10 right-10 text-white"><X className="w-10 h-10" /></button>
+                  <button onClick={() => setMenuOpen(false)} className="absolute top-10 right-10 text-white/90 hover:text-white transition-colors"><X className="w-10 h-10" /></button>
                   {['Home', 'Service', 'Portfolio', 'Contact', 'About'].map((item, i) => (
                     <motion.button 
                       key={item} 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
+                      initial={{ opacity: 0, y: 44, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ delay: i * 0.08, duration: 0.45, type: 'spring', stiffness: 180, damping: 16 }}
                       onClick={() => navigate(item.toLowerCase())} 
-                      className="text-4xl md:text-5xl font-bold uppercase tracking-[0.1em] hover:text-white/50 transition-colors"
+                      className="menu-link glossy-silver text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-[0.14em]"
                     >
                       {item}
                     </motion.button>
                   ))}
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.45 }}>
                     <MagneticButton href={BOOKING_URL} className="mt-8">Book Online</MagneticButton>
                   </motion.div>
                 </motion.div>
