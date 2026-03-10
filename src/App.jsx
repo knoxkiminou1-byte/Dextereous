@@ -12,19 +12,19 @@ const BOOKING_URL = "https://book.squareup.com/appointments/qcqwb3bnqni8yy/locat
 
 const BrandLogo = ({ size = 'md', className = '' }) => {
   const sizes = {
-    sm: { title: 'text-xl', sub: 'text-[7px] tracking-[0.3em]', dash: 'w-4' },
-    md: { title: 'text-2xl', sub: 'text-[8px] tracking-[0.4em]', dash: 'w-6' },
-    lg: { title: 'text-4xl md:text-5xl', sub: 'text-[10px] tracking-[0.5em]', dash: 'w-8' },
-    xl: { title: 'text-5xl md:text-[5rem]', sub: 'text-[12px] md:text-[14px] tracking-[0.5em]', dash: 'w-10' },
-    hero: { title: 'text-5xl md:text-[7rem]', sub: 'text-[12px] md:text-[16px] tracking-[0.5em]', dash: 'w-12' },
+    sm: { title: 'text-2xl', sub: 'text-[9px] tracking-[0.3em]', dash: 'w-4' },
+    md: { title: 'text-3xl', sub: 'text-[10px] tracking-[0.4em]', dash: 'w-6' },
+    lg: { title: 'text-5xl md:text-6xl', sub: 'text-[12px] tracking-[0.5em]', dash: 'w-8' },
+    xl: { title: 'text-6xl md:text-[5.5rem]', sub: 'text-[13px] md:text-[15px] tracking-[0.5em]', dash: 'w-10' },
+    hero: { title: 'text-6xl md:text-[7.5rem]', sub: 'text-[13px] md:text-[17px] tracking-[0.5em]', dash: 'w-12' },
   };
   const s = sizes[size];
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <span className={`${s.title} font-bold text-white tracking-[0.15em] uppercase leading-none`} style={{ fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif" }}>DEXTEROUS</span>
+      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none`}>DEXTEROUS</span>
       <div className="flex items-center gap-3 mt-2">
         <div className={`h-[1px] ${s.dash} bg-white`} />
-        <span className={`${s.sub} font-bold text-white uppercase leading-none`} style={{ fontFamily: "'Arial', 'Helvetica Neue', sans-serif" }}>BARBER LOUNGE</span>
+        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none`}>BARBER LOUNGE</span>
         <div className={`h-[1px] ${s.dash} bg-white`} />
       </div>
     </div>

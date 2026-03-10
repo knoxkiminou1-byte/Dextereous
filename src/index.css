@@ -1,1 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap');
 @import "tailwindcss";
+
+:root {
+  --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Bebas Neue', 'Arial Black', 'Impact', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 0.35vw + 15px, 18px);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  background: #000;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+}
+
+.brand-title,
+.brand-subtitle {
+  font-family: var(--font-display);
+}
