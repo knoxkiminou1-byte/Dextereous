@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const BOOKING_URL = "https://book.squareup.com/appointments/qcqwb3bnqni8yy/location/LP3M72E5EMT6N/services?buttonTextColor=ffffff&color=212121&locale=en&referrer=so";
 
-const BrandLogo = ({ size = 'md', className = '' }) => {
+const BrandLogo = ({ size = 'md', className = '', glossyTitle = false, glossySubtitle = false }) => {
   const sizes = {
     sm: { title: 'text-2xl', sub: 'text-[9px] tracking-[0.3em]', dash: 'w-4' },
     md: { title: 'text-3xl', sub: 'text-[10px] tracking-[0.4em]', dash: 'w-6' },
@@ -21,10 +21,10 @@ const BrandLogo = ({ size = 'md', className = '' }) => {
   const s = sizes[size];
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none`}>DEXTEROUS</span>
+      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
       <div className="flex items-center gap-3 mt-2">
         <div className={`h-[1px] ${s.dash} bg-white`} />
-        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none`}>BARBER LOUNGE</span>
+        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}>BARBER LOUNGE</span>
         <div className={`h-[1px] ${s.dash} bg-white`} />
       </div>
     </div>
@@ -123,13 +123,13 @@ const HomePage = () => {
       <div className="relative z-10 text-center max-w-5xl">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.div variants={fadeUp} custom={0.3}>
-            <BrandLogo size="hero" />
+            <BrandLogo size="hero" glossyTitle={true} glossySubtitle={true} />
           </motion.div>
-          <motion.p variants={fadeUp} custom={0.6} className="text-white/70 uppercase tracking-[0.6em] text-[12px] md:text-[14px] font-medium mt-10">
+          <motion.p variants={fadeUp} custom={0.6} className="glossy-silver uppercase tracking-[0.6em] text-[12px] md:text-[14px] font-medium mt-10">
             Precision . Style . Confidence
           </motion.p>
           <motion.div variants={fadeUp} custom={0.9} className="mt-12">
-            <MagneticButton href={BOOKING_URL} variant="outline">Book Your Appointment</MagneticButton>
+            <MagneticButton href={BOOKING_URL} variant="outline" className="glossy-silver border-white/70">Book Your Appointment</MagneticButton>
           </motion.div>
         </motion.div>
       </div>
@@ -156,9 +156,9 @@ const ServicePage = () => (
       <motion.div variants={fadeUp}>
         <BrandLogo size="lg" />
       </motion.div>
-      <motion.p variants={fadeUp} className="text-[10px] tracking-[0.4em] uppercase font-black text-white/50 border-t border-white/10 pt-4 inline-block mt-8">Choose one of my specialties</motion.p>
+      <motion.p variants={fadeUp} className="text-sm md:text-base tracking-[0.35em] uppercase font-black text-white/60 border-t border-white/10 pt-4 inline-block mt-8">Choose one of my specialties</motion.p>
       <motion.div variants={fadeUp} className="mt-8">
-        <MagneticButton href={BOOKING_URL} variant="primary">Book Now</MagneticButton>
+        <MagneticButton href={BOOKING_URL} variant="primary" className="text-sm md:text-base px-10 py-4">Book Now</MagneticButton>
       </motion.div>
     </motion.div>
     
@@ -206,14 +206,14 @@ const ServicePage = () => (
           <motion.div variants={i % 2 === 0 ? slideInLeft : slideInRight} className="flex-1 w-full aspect-[4/3] overflow-hidden">
             <SafeImage src={s.img} className="w-full h-full" alt={s.name} grayscale={true} />
           </motion.div>
-          <motion.div variants={i % 2 === 0 ? slideInRight : slideInLeft} className="flex-1 space-y-6 pt-4">
+          <motion.div variants={i % 2 === 0 ? slideInRight : slideInLeft} className="flex-1 space-y-8 pt-4">
             <div className="flex items-center gap-4">
               <div className="h-[1px] w-8 bg-white/30" />
-              <h3 className="text-white/40 uppercase tracking-[0.2em] text-[10px] font-black">{s.name}</h3>
+              <h3 className="text-white/70 uppercase tracking-[0.14em] text-2xl md:text-3xl font-black leading-tight">{s.name}</h3>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-lg">{s.desc}</p>
-            <p className="text-white text-lg font-bold tracking-wide">{s.price}</p>
-            <MagneticButton variant="dark" href={BOOKING_URL}>Book Now</MagneticButton>
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-xl">{s.desc}</p>
+            <p className="text-white text-2xl md:text-3xl font-bold tracking-wide">{s.price}</p>
+            <MagneticButton variant="dark" href={BOOKING_URL} className="text-sm md:text-base px-10 py-4">Book Now</MagneticButton>
           </motion.div>
         </motion.div>
       ))}
@@ -502,7 +502,7 @@ export default function App() {
             
             <nav className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center mix-blend-difference">
               <div onClick={() => navigate('home')} className="cursor-pointer group">
-                <BrandLogo size="sm" className="items-start" />
+                <BrandLogo size="sm" className="items-start" glossyTitle={true} />
               </div>
               <div className="hidden lg:flex gap-12 items-center text-lg xl:text-xl font-black uppercase">
                 {[
