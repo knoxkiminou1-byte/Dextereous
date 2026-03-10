@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const BOOKING_URL = "https://book.squareup.com/appointments/qcqwb3bnqni8yy/location/LP3M72E5EMT6N/services?buttonTextColor=ffffff&color=212121&locale=en&referrer=so";
 
-const BrandLogo = ({ size = 'md', className = '', glossyTitle = false }) => {
+const BrandLogo = ({ size = 'md', className = '', glossyTitle = false, glossySubtitle = false }) => {
   const sizes = {
     sm: { title: 'text-2xl', sub: 'text-[9px] tracking-[0.3em]', dash: 'w-4' },
     md: { title: 'text-3xl', sub: 'text-[10px] tracking-[0.4em]', dash: 'w-6' },
@@ -24,7 +24,7 @@ const BrandLogo = ({ size = 'md', className = '', glossyTitle = false }) => {
       <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
       <div className="flex items-center gap-3 mt-2">
         <div className={`h-[1px] ${s.dash} bg-white`} />
-        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none`}>BARBER LOUNGE</span>
+        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}>BARBER LOUNGE</span>
         <div className={`h-[1px] ${s.dash} bg-white`} />
       </div>
     </div>
@@ -123,13 +123,13 @@ const HomePage = () => {
       <div className="relative z-10 text-center max-w-5xl">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.div variants={fadeUp} custom={0.3}>
-            <BrandLogo size="hero" />
+            <BrandLogo size="hero" glossyTitle={true} glossySubtitle={true} />
           </motion.div>
-          <motion.p variants={fadeUp} custom={0.6} className="text-white/70 uppercase tracking-[0.6em] text-[12px] md:text-[14px] font-medium mt-10">
+          <motion.p variants={fadeUp} custom={0.6} className="glossy-silver uppercase tracking-[0.6em] text-[12px] md:text-[14px] font-medium mt-10">
             Precision . Style . Confidence
           </motion.p>
           <motion.div variants={fadeUp} custom={0.9} className="mt-12">
-            <MagneticButton href={BOOKING_URL} variant="outline">Book Your Appointment</MagneticButton>
+            <MagneticButton href={BOOKING_URL} variant="outline" className="glossy-silver border-white/70">Book Your Appointment</MagneticButton>
           </motion.div>
         </motion.div>
       </div>
