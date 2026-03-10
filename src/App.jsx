@@ -115,7 +115,7 @@ const slideInRight = {
 
 const HomePage = () => {
   return (
-    <section className="relative h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
+    <section className="hero-silver relative h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <SafeImage src="/images/hero-barbershop.jpg" className="w-full h-full" alt="Barbershop" grayscale={true} />
@@ -123,13 +123,13 @@ const HomePage = () => {
       <div className="relative z-10 text-center max-w-5xl">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.div variants={fadeUp} custom={0.3}>
-            <BrandLogo size="hero" glossyTitle={true} glossySubtitle={true} />
+            <BrandLogo size="hero" glossyTitle={true} glossySubtitle={true} className="hero-shine" />
           </motion.div>
-          <motion.p variants={fadeUp} custom={0.6} className="glossy-silver uppercase tracking-[0.6em] text-[12px] md:text-[14px] font-medium mt-10">
+          <motion.p variants={fadeUp} custom={0.6} className="hero-shine glossy-silver uppercase tracking-[0.6em] text-[12px] md:text-[14px] font-medium mt-10">
             Precision . Style . Confidence
           </motion.p>
           <motion.div variants={fadeUp} custom={0.9} className="mt-12">
-            <MagneticButton href={BOOKING_URL} variant="outline" className="glossy-silver border-white/70">Book Your Appointment</MagneticButton>
+            <MagneticButton href={BOOKING_URL} variant="outline" className="hero-shine glossy-silver border-white/70">Book Your Appointment</MagneticButton>
           </motion.div>
         </motion.div>
       </div>
@@ -512,7 +512,7 @@ export default function App() {
                   { label: 'Contact', id: 'contact' },
                   { label: 'About', id: 'about' }
                 ].map(item => (
-                  <button key={item.id} onClick={() => navigate(item.id)} className={`menu-link glossy-silver relative ${page === item.id ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}>
+                  <button key={item.id} onClick={() => navigate(item.id)} className={`menu-link relative text-white ${page === item.id ? 'opacity-100' : 'opacity-80 hover:opacity-100'}`}>
                     {item.label}
                     {page === item.id && <motion.div layoutId="nav-underline" className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-white/0 via-white to-white/0" />}
                   </button>

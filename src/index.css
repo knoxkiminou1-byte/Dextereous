@@ -70,3 +70,15 @@ h6 {
   transform: translateY(-2px) scale(1.04);
   filter: brightness(1.16);
 }
+
+
+@media (max-width: 767px) {
+  .hero-silver .hero-shine.glossy-silver {
+    color: #fff;
+    background-image: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    text-shadow: none;
+    animation: none;
+  }
+}
