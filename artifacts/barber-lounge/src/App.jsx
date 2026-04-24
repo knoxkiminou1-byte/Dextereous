@@ -22,13 +22,13 @@ const BrandLogo = ({ size = 'md', className = '', glossyTitle = false, glossySub
   return (
     <div className={`inline-flex flex-col items-center max-w-full ${className}`}>
       <span
-        style={{ marginRight: '-0.15em' }}
+        style={{ paddingLeft: '0.15em' }}
         className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none whitespace-nowrap ${glossyTitle ? 'glossy-silver' : ''}`}
       >DEXTEROUS</span>
       <div className="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 mt-2">
         <div className="h-[1px] w-full bg-white" />
         <span
-          style={{ marginRight: `-${s.subTrack}` }}
+          style={{ paddingLeft: s.subTrack }}
           className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}
         >BARBER LOUNGE</span>
         <div className="h-[1px] w-full bg-white" />
@@ -135,7 +135,7 @@ const HomePage = () => {
             Precision . Style . Confidence
           </motion.p>
           <motion.div variants={fadeUp} custom={0.9} className="mt-12">
-            <MagneticButton href={BOOKING_URL} variant="outline" className="hero-shine glossy-silver border-white/70">Book Now</MagneticButton>
+            <MagneticButton href={BOOKING_URL} variant="outline" className="border-white/70">Book Now</MagneticButton>
           </motion.div>
         </motion.div>
       </div>
@@ -413,7 +413,7 @@ const Loader = ({ onComplete }) => {
           animate={{ opacity: phase >= 0 ? 1 : 0, y: phase >= 0 ? 0 : 30 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <span className="text-5xl md:text-[6rem] font-bold text-white tracking-[0.15em] uppercase leading-none block" style={{ fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif" }}>DEXTEROUS</span>
+          <span className="text-5xl md:text-[6rem] font-bold text-white tracking-[0.15em] uppercase leading-none inline-block" style={{ fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif", paddingLeft: '0.15em' }}>DEXTEROUS</span>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
@@ -422,7 +422,7 @@ const Loader = ({ onComplete }) => {
           className="flex items-center justify-center gap-3 mt-4"
         >
           <div className="h-[1px] w-10 bg-white" />
-          <span className="text-[11px] md:text-[14px] font-bold text-white uppercase tracking-[0.5em] leading-none" style={{ fontFamily: "'Arial', 'Helvetica Neue', sans-serif" }}>BARBER LOUNGE</span>
+          <span className="text-[11px] md:text-[14px] font-bold text-white uppercase tracking-[0.5em] leading-none" style={{ fontFamily: "'Arial', 'Helvetica Neue', sans-serif", paddingLeft: '0.5em' }}>BARBER LOUNGE</span>
           <div className="h-[1px] w-10 bg-white" />
         </motion.div>
         <motion.div
