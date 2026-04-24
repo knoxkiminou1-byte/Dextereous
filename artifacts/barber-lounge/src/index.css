@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Bebas Neue', 'Arial Black', 'Impact', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 0.35vw + 15px, 18px);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  background: #000;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+}
+
+.brand-title,
+.brand-subtitle {
+  font-family: var(--font-display);
+}
+
+
+@keyframes silverSheen {
+  0% {
+    background-position: -220% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+.glossy-silver {
+  color: transparent;
+  background-image: linear-gradient(
+    105deg,
+    #7f7f7f 0%,
+    #bcbcbc 18%,
+    #f6f6f6 34%,
+    #a0a0a0 52%,
+    #ffffff 66%,
+    #969696 82%,
+    #d4d4d4 100%
+  );
+  background-size: 260% 260%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
+  animation: silverSheen 6s linear infinite;
+}
+
+.menu-link {
+  letter-spacing: 0.22em;
+  transform-origin: center;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.menu-link:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.16);
+}
+
+
+@media (max-width: 767px) {
+  .hero-silver .hero-shine.glossy-silver {
+    color: #fff;
+    background-image: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    text-shadow: none;
+    animation: none;
+  }
+}

@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Dexterous Barber Lounge"
+version = "1.0.0"
+id = "artifacts/barber-lounge"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22473
+
+[services.development]
+run = "pnpm --filter @workspace/barber-lounge run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/barber-lounge", "run", "build" ]
+publicDir = "artifacts/barber-lounge/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22473"
+BASE_PATH = "/"

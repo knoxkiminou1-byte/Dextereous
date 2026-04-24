@@ -25,3 +25,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Artifacts
+
+- `artifacts/barber-lounge/` — Dexterous Barber Lounge marketing site (React + Vite, framer-motion). Imported from a Vercel project. Served at `/`. Single-page app with client-side state-based navigation between Home, Service, Portfolio, Contact, and About sections. Uses local images in `public/images/` and Square booking link.
