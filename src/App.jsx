@@ -22,10 +22,10 @@ const BrandLogo = ({ size = 'md', className = '', glossyTitle = false, glossySub
   return (
     <div className={`inline-flex flex-col items-center max-w-full ${className}`}>
       <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none whitespace-nowrap ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
-      <div className="flex w-full items-center justify-between gap-3 mt-2">
-        <div className={`h-[1px] ${s.dash} bg-white`} />
+      <div className="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 mt-2">
+        <div className="h-[1px] w-full bg-white" />
         <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}>BARBER LOUNGE</span>
-        <div className={`h-[1px] ${s.dash} bg-white`} />
+        <div className="h-[1px] w-full bg-white" />
       </div>
     </div>
   );
@@ -118,7 +118,7 @@ const HomePage = () => {
     <section className="hero-silver relative h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <SafeImage src="/images/hero-barbershop.jpg" className="w-full h-full" alt="Barbershop" grayscale={true} />
+        <SafeImage src="/images/hero-dexterous-modern.png" className="w-full h-full" alt="Dexterous Barber Lounge interior" grayscale={true} />
       </div>
       <div className="relative z-10 text-center max-w-5xl">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
