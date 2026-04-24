@@ -12,19 +12,25 @@ const BOOKING_URL = "https://book.squareup.com/appointments/qcqwb3bnqni8yy/locat
 
 const BrandLogo = ({ size = 'md', className = '', glossyTitle = false, glossySubtitle = false }) => {
   const sizes = {
-    sm: { title: 'text-2xl', sub: 'text-[9px] tracking-[0.3em]', dash: 'w-4' },
-    md: { title: 'text-3xl', sub: 'text-[10px] tracking-[0.4em]', dash: 'w-6' },
-    lg: { title: 'text-5xl md:text-6xl', sub: 'text-[12px] tracking-[0.5em]', dash: 'w-8' },
-    xl: { title: 'text-6xl md:text-[5.5rem]', sub: 'text-[13px] md:text-[15px] tracking-[0.5em]', dash: 'w-10' },
-    hero: { title: 'text-6xl md:text-[7.5rem]', sub: 'text-[13px] md:text-[17px] tracking-[0.5em]', dash: 'w-12' },
+    sm: { title: 'text-2xl', sub: 'text-[9px] tracking-[0.3em]', subTrack: '0.3em', dash: 'w-4' },
+    md: { title: 'text-3xl', sub: 'text-[10px] tracking-[0.4em]', subTrack: '0.4em', dash: 'w-6' },
+    lg: { title: 'text-5xl md:text-6xl', sub: 'text-[12px] tracking-[0.5em]', subTrack: '0.5em', dash: 'w-8' },
+    xl: { title: 'text-6xl md:text-[5.5rem]', sub: 'text-[13px] md:text-[15px] tracking-[0.5em]', subTrack: '0.5em', dash: 'w-10' },
+    hero: { title: 'text-6xl md:text-[7.5rem]', sub: 'text-[13px] md:text-[17px] tracking-[0.5em]', subTrack: '0.5em', dash: 'w-12' },
   };
   const s = sizes[size];
   return (
     <div className={`inline-flex flex-col items-center max-w-full ${className}`}>
-      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none whitespace-nowrap ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
+      <span
+        style={{ marginRight: '-0.15em' }}
+        className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none whitespace-nowrap ${glossyTitle ? 'glossy-silver' : ''}`}
+      >DEXTEROUS</span>
       <div className="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 mt-2">
         <div className="h-[1px] w-full bg-white" />
-        <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}>BARBER LOUNGE</span>
+        <span
+          style={{ marginRight: `-${s.subTrack}` }}
+          className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}
+        >BARBER LOUNGE</span>
         <div className="h-[1px] w-full bg-white" />
       </div>
     </div>
@@ -129,7 +135,7 @@ const HomePage = () => {
             Precision . Style . Confidence
           </motion.p>
           <motion.div variants={fadeUp} custom={0.9} className="mt-12">
-            <MagneticButton href={BOOKING_URL} variant="outline" className="hero-shine glossy-silver border-white/70">Book Your Appointment</MagneticButton>
+            <MagneticButton href={BOOKING_URL} variant="outline" className="hero-shine glossy-silver border-white/70">Book Now</MagneticButton>
           </motion.div>
         </motion.div>
       </div>
