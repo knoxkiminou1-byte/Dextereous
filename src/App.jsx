@@ -20,9 +20,9 @@ const BrandLogo = ({ size = 'md', className = '', glossyTitle = false, glossySub
   };
   const s = sizes[size];
   return (
-    <div className={`flex flex-col items-center ${className}`}>
-      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
-      <div className="flex items-center gap-3 mt-2">
+    <div className={`inline-flex flex-col items-center max-w-full ${className}`}>
+      <span className={`${s.title} brand-title font-bold text-white tracking-[0.15em] uppercase leading-none whitespace-nowrap ${glossyTitle ? 'glossy-silver' : ''}`}>DEXTEROUS</span>
+      <div className="flex w-full items-center justify-between gap-3 mt-2">
         <div className={`h-[1px] ${s.dash} bg-white`} />
         <span className={`${s.sub} brand-subtitle font-bold text-white uppercase leading-none ${glossySubtitle ? 'glossy-silver' : ''}`}>BARBER LOUNGE</span>
         <div className={`h-[1px] ${s.dash} bg-white`} />
